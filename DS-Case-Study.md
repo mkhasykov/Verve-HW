@@ -17,7 +17,7 @@ It would require a treatment of such values during model training and inference 
 ## 2. Feature engineering
 The main instument for finding the most important features would be a measuring classification metrics on a n-fold (n is 3 or 5) cross validaion. The metric would be an accuracy, because 70/30 class imbalance is not critical.
 
-I would generate several features from the orginal features and measure metrics values on all possible subsets of feature sets (it's ok because the number of features at the moment is not huge, in other case one would consider such techniques as SHAP or permutation importance).
+I would generate several features from the original features and measure metrics values on all possible subsets of feature sets (it's ok because the number of features at the moment is not huge, in other case one would consider such techniques as SHAP or permutation importance).
 
 Let's look at original features and think if it possible to make it more informative and stable for the model:
 
@@ -34,10 +34,10 @@ Here I would also try to combine unpopular categories. Because here we have more
 It could be a useful feature. One can generate some statistics like "how much time the user spends using app from beauty category", "how much time user spends using apps in average"
 
 **click**
-This featury likely to be removed entirely because it mostly contains only one value (zero)
+This feature likely to be removed entirely because it mostly contains only one value (zero), so it could not be informative
 
 ## 3. Model
-I would like to try linear logistic regression at first, because dataset is small so I would rely also on an understanding of business domain, in that case it is quite helpful that linear mode is interpretable.
+I would like to try linear logistic regression at first, because the dataset is small so I would rely also on an understanding of business domain (not only on metrics values), in that case it is quite helpful that the linear mode is interpretable.
 
 ## Advantages
 - interpretability
@@ -45,5 +45,5 @@ I would like to try linear logistic regression at first, because dataset is smal
 
 ## Disadvantages
 - can't handle nonlinear dependencies
-- requires one-hot encoding of categorical features
+- requires one-hot encoding categorical features
 - requires scaling continious feature values
